@@ -1,0 +1,14 @@
+<div class="container text-center">
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button class="btn btn-outline-secondary">Liste</button>
+    <button class="btn btn-outline-secondary">Facturation</button>
+    <button class="btn btn-outline-secondary">Virements</button>
+  </div>
+  <button class="btn btn-outline-primary" [routerLink]="['add']">+</button>
+</div>
+
+<app-list-prestations></app-list-prestations>
+
+<router-outlet></router-outlet>
+
+

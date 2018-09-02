@@ -1,0 +1,35 @@
+<div class="content">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" *ngFor="let key of columns">{{key.name | intitule}} </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of list | async as list" (click)="edit(item)">
+        <ng-container *ngFor="let key of columns" [ngSwitch]="key.type">
+          <td *ngSwitchCase="'date'">{{ item[key.name] | date:'longDate' }}</td>
+          <td *ngSwitchCase="'currency'">{{ item[key.name] | currency: 'EUR' }}</td>
+          <td *ngSwitchCase="'percent'">{{ item[key.name] | percent }}</td>
+          <td *ngSwitchCase="'select'" [appState]="item['state']">
+            <ng-template #popContent>
+                <div class="labels">
+                <div class="label" *ngFor="let state of options">
+                  <div [appState]="state" (click)="$event.stopPropagation(); p.close(); process(item, state)" data-over><span>{{ state }}</span></div>
+                </div>
+              </div>
+            </ng-template>
+            <div [ngbPopover]="popContent" placement="bottom-right" triggers="manual"  #p="ngbPopover" (click)="$event.stopPropagation(); p.toggle()">
+                <span>{{item['state']}}</span>
+            </div>
+          </td>
+          <!-- pour les type string -->
+          <td *ngSwitchDefault>{{ item[key.name] }}</td>
+        </ng-container>
+      </tr>
+    </tbody>
+  </table>
+  <div>
+    <ng-content></ng-content>
+  </div>
+</div>

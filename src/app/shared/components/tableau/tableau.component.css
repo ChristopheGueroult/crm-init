@@ -1,0 +1,82 @@
+td {
+  vertical-align: middle;
+}
+
+.table,
+div {
+  font-size: 14px;
+  border-collapse: initial;
+  border-spacing: 0px;
+  margin-bottom: 0;
+}
+
+.table thead th {
+  background: #fff;
+  color: #5a6168;
+  font-weight: normal;
+  border-bottom: #fff;
+}
+
+.table tr {
+  background: #f0f0f0;
+}
+
+.table + div {
+  padding:  0.75rem;
+  border-top: 1px solid #fff;
+  background: rgb(247, 247, 247);
+  border-left: 8px solid #d8d7d7;
+}
+.table tr:hover {
+  cursor: pointer;
+  background: #f7f7f7;
+}
+
+.table th,
+.table td {
+  padding: 0.4rem 0.75rem;
+  border-top: 1px solid #fff !important;
+  border-bottom: 1px solid #e6e6e6;
+  color: #596496;
+
+}
+
+.table th:first-child {
+  border-left: 8px solid #fff;
+}
+
+.table td:first-child {
+  border-left: 8px solid #d8d7d7;
+}
+
+[class*="state-"] span {
+  color: #fff !important;
+}
+[data-over]:hover {
+  opacity: .8;
+  filter:alpha(opacity=80);
+}
+.state-option {
+  background: rgb(253, 171, 61) !important;
+}
+.state-annule,
+.state-inactif {
+  background: rgb(226, 68, 92) !important;
+}
+.state-confirme,
+.state-actif {
+  background: rgb(0, 200, 117) !important;
+}
+.state-facture {
+  background: rgb(87, 155, 252) !important;
+}
+.state-encaisse {
+  background: rgb(0, 134, 192) !important;
+}
+.state-vire {
+  background: rgb(156, 211, 38) !important;
+}
+.state-commissionne {
+  background: rgb(3, 127, 76) !important;
+}
+

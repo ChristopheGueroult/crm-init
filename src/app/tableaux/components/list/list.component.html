@@ -1,0 +1,3 @@
+<app-tableau [list]="listItems" [columns]="columnsConfig" [options]="options" (action)="changeState($event)">
+  <a [routerLink]="['add']">+ Ajouter une ligne au tableau " {{ itemToAdd }} "</a>
+</app-tableau>

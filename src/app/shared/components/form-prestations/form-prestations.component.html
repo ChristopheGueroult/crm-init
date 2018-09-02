@@ -1,0 +1,91 @@
+<div class="container">
+    <form class="form" novalidate [formGroup]="form" (ngSubmit)="process()">
+
+      <div class="row form-group">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Activité" formControlName="activite">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Désignation" formControlName="designation">
+        </div>
+      </div>
+
+      <div class="row form-group">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Lieu" formControlName="lieu">
+        </div>
+        <div class="col">
+          <select class="form-control" formControlName="client">
+            <option value="" selecded>Client</option>
+            <option *ngFor="let client of clients | async" [ngValue]="client.nom">{{ client.nom }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row form-group">
+        <div class="col">
+          <!-- <input type="text" class="form-control" placeholder="Date début" formControlName="date_debut"> -->
+          <div class="input-group">
+            <input class="form-control" placeholder="Date début yyyy-mm-dd"
+                    name="dp" formControlName="date_debut" ngbDatepicker #d="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+                <img src="./assets/img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <!-- <input type="text" class="form-control" placeholder="Date fin" formControlName="date_fin"> -->
+          <div class="input-group">
+            <input class="form-control" placeholder="Date fin yyyy-mm-dd"
+                    name="dp" formControlName="date_fin" ngbDatepicker #d2="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" (click)="d2.toggle()" type="button">
+                <img src="./assets/img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row form-group">
+        <div class="col">
+          <select class="form-control" formControlName="intervenant">
+            <option value="" selecded>Intervenant</option>
+            <option *ngFor="let intervenant of intervenants | async" [ngValue]="intervenant.nom_complet">{{ intervenant.nom_complet }}</option>
+          </select>
+        </div>
+        <div class="col">
+          <select class="form-control" formControlName="apporteur">
+            <option value="" selecded>Apporteur</option>
+            <option *ngFor="let apporteur of apporteurs | async" [ngValue]="apporteur.nom_complet">{{ apporteur.nom_complet }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row form-group">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Prix ht" formControlName="prix_ht">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Frais ht" formControlName="frais_ht">
+        </div>
+      </div>
+
+      <div class="row form-group">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Commission" formControlName="com">
+        </div>
+        <div class="col">
+          <select class="form-control" formControlName="state">
+            <option value="" selecded>Statut</option>
+            <option *ngFor="let state of states" [ngValue]="state">{{ state }}</option>
+          </select>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-outline-primary">Valider</button>
+
+    </form>
+</div>

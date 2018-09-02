@@ -1,0 +1,4 @@
+<app-tableau [list]="listItems" [columns]="columnsConfig" [options]="options" (action)="changeState($event)">
+    <a [routerLink]="['add']"><fa-icon icon="plus-circle"></fa-icon> Ajouter une prestation</a>
+</app-tableau>
+

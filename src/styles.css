@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+.content {
+  margin: 0 1rem;
+}
+
+.container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.labels {
+  display: flex;
+  flex-wrap: wrap;
+}
+.label {
+  flex: 0 0 50%;
+  padding: 5px 0;
+}
+.label div {
+  padding: 0.4rem 0.75rem;
+}
+.label:nth-child(odd) div {
+  margin-right: 5px;
+}
+.label:nth-child(even) div {
+  margin-left: 5px;
+}
+.popover {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,.32);
+}
+
